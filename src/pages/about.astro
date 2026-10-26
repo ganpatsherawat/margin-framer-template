@@ -5,52 +5,60 @@ import CallToAction from '../components/CallToAction.astro';
 const comparisons = [
   {
     criterion: 'Who does the work',
-    hoox: 'Two partners, every time',
+    margin: 'Two partners, every time',
     consultancy: 'A team led by a partner you meet twice',
-    agency: 'Account managers & junior execution',
-    freelance: 'One person with variable capacity'
+    agency: 'Account managers',
+    freelance: 'One person'
   },
   {
     criterion: 'What you pay for',
-    hoox: 'A fixed fee scoped to a clear decision',
-    consultancy: 'Day rates, billable hours by the team',
-    agency: 'Monthly retainers and media spend',
-    freelance: 'Hours or daily rates'
+    margin: 'A fixed fee, scoped to a decision',
+    consultancy: 'Day rates, by the team',
+    agency: 'Retainers and media',
+    freelance: 'Hours or days'
   },
   {
     criterion: 'When it ends',
-    hoox: 'When it runs autonomously without us',
-    consultancy: 'When the allocated budget runs out',
-    agency: 'When you cancel the monthly retainer',
-    freelance: 'When project bandwidth shifts'
+    margin: 'When it runs without us',
+    consultancy: 'When the budget does',
+    agency: 'When you cancel',
+    freelance: 'When you stop calling'
   }
+];
+
+const turnAwayItems = [
+  'Anyone looking for a cheerleader',
+  'A strategy deck for the board and no changes',
+  'Engagements shorter than four weeks',
+  'A fifth client while we have four',
+  'Hire three more SDRs'
 ];
 ---
 
-<Layout title="About · HOOX Advisory">
+<Layout title="About — Margin">
   <div class="site-container" style="padding-top: 140px; padding-bottom: 60px;">
     <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 16px;">
-      Home / About
+      HOME / ABOUT
     </div>
     <h1 class="hero-headline" style="max-width: 800px;">
       A practice built on saying no.
     </h1>
     <p class="hero-subhead" style="max-width: 650px;">
-      Two partners and one operational rule: decide what matters, write it down, and stay until it works.
+      Two partners and one rule: decide what matters, write it down, stay until it works.
     </p>
 
     <!-- Stats Bar -->
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 48px 0; background-color: var(--bg-card); border-radius: 20px; padding: 32px; border: 1px solid var(--border-card);">
       <div>
-        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">Founded</div>
+        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">FOUNDED</div>
         <div style="font-family: var(--font-serif); font-size: clamp(28px, 3.5vw, 42px); color: var(--text-main);">2014</div>
       </div>
       <div>
-        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">Partners</div>
+        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">PARTNERS</div>
         <div style="font-family: var(--font-serif); font-size: clamp(28px, 3.5vw, 42px); color: var(--text-main);">2</div>
       </div>
       <div>
-        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">Clients at a time</div>
+        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">CLIENTS AT A TIME</div>
         <div style="font-family: var(--font-serif); font-size: clamp(28px, 3.5vw, 42px); color: var(--accent);">4</div>
       </div>
     </div>
@@ -58,20 +66,20 @@ const comparisons = [
     <!-- Story Narrative -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; margin: 80px 0; align-items: center;">
       <div>
-        <div class="section-label">Origin</div>
+        <div class="section-label">HOW IT STARTED</div>
         <h2 class="section-heading">How it started</h2>
         <p style="font-size: 17px; line-height: 1.65; color: var(--text-muted); margin-bottom: 20px;">
-          In 2014 Nora was hired to write a comprehensive growth plan for a company that already had too many of them.
+          In 2014 Nora was hired to write a growth plan for a company that already had too many of them.
         </p>
         <p style="font-size: 17px; line-height: 1.65; color: var(--text-muted);">
-          She spent three months persuading the executive team to stop four of their six active initiatives. Revenue grew faster that calendar year than ever before. We built HOOX to preserve that exact clarity.
+          She spent three months persuading the leadership team to stop four of their six priorities. Revenue grew faster that year than ever before.
         </p>
       </div>
 
       <div style="height: 360px; border-radius: 20px; overflow: hidden;">
         <img 
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" 
-          alt="Partners reviewing strategy" 
+          src="/images/nLPI85a5ydHrnKzUoyGw7ilZyoM.jpg" 
+          alt="Looking up at the concrete facade of a modernist office tower." 
           style="width: 100%; height: 100%; object-fit: cover;"
           loading="lazy"
         />
@@ -80,33 +88,62 @@ const comparisons = [
 
     <!-- The Partners -->
     <div style="margin: 90px 0;">
-      <div class="section-label">Leadership</div>
+      <div class="section-label">LEADERSHIP</div>
       <h2 class="section-heading">Two partners. No hand-offs.</h2>
+      <p style="font-size: 17px; color: var(--text-muted); margin-top: -16px; margin-bottom: 40px;">
+        One of us leads your work from first call to review.
+      </p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 40px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
         <div style="background-color: var(--bg-card); border-radius: 20px; padding: 36px; border: 1px solid var(--border-card);">
-          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">Founding Partner</div>
+          <div style="height: 240px; border-radius: 12px; overflow: hidden; margin-bottom: 24px;">
+            <img 
+              src="/images/1ehqDga1C4McfFJ3Yw2BVgtRRi8.jpg" 
+              alt="Seen from behind, a woman with curly hair looks out of an office window at the city." 
+              style="width: 100%; height: 100%; object-fit: cover;" 
+            />
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">FOUNDING PARTNER</div>
           <h3 style="font-family: var(--font-serif); font-size: 28px; margin-bottom: 16px;">Nora Ashby</h3>
           <p style="font-size: 15px; line-height: 1.6; color: var(--text-muted); margin-bottom: 24px;">
-            Fifteen years in B2B marketing, the last six leading growth through Series B and C rounds. Starts every client engagement by reviewing the last twenty lost-deal notes.
+            Fifteen years in B2B marketing, the last six leading it through a Series B and C. Starts every engagement by reading the last twenty lost-deal emails.
           </p>
-          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent);">Focus: Positioning & go-to-market</div>
+          <div style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px;">
+            <span style="color: var(--text-subtle);">FOCUS: </span>
+            <span style="color: var(--accent);">Positioning & go-to-market</span>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle);">
+            BEFORE: VP Marketing at two B2B software companies
+          </div>
         </div>
 
         <div style="background-color: var(--bg-card); border-radius: 20px; padding: 36px; border: 1px solid var(--border-card);">
-          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">Partner</div>
+          <div style="height: 240px; border-radius: 12px; overflow: hidden; margin-bottom: 24px;">
+            <img 
+              src="/images/pskkBSXH7v9YHef7RNszJZuGSuI.jpg" 
+              alt="Seen from behind through a gridded glass wall, a person looks out over the city." 
+              style="width: 100%; height: 100%; object-fit: cover;" 
+            />
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 8px;">PARTNER</div>
           <h3 style="font-family: var(--font-serif); font-size: 28px; margin-bottom: 16px;">Daniel Rhee</h3>
           <p style="font-size: 15px; line-height: 1.6; color: var(--text-muted); margin-bottom: 24px;">
-            Former COO, and before that a management consultant who got tired of leaving after the final presentation. Believes most organizational charts are drawn a year too late.
+            Former COO, and before that a management consultant who got tired of leaving after the final presentation. Believes most org charts are drawn a year too late.
           </p>
-          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent);">Focus: Operations & advisory</div>
+          <div style="font-family: var(--font-mono); font-size: 12px; margin-bottom: 8px;">
+            <span style="color: var(--text-subtle);">FOCUS: </span>
+            <span style="color: var(--accent);">Operations & advisory</span>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle);">
+            BEFORE: COO of a 200-person services firm
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Comparison Table -->
     <div style="margin: 90px 0;">
-      <div class="section-label">Transparency</div>
+      <div class="section-label">TRANSPARENCY</div>
       <h2 class="section-heading">How we compare, honestly.</h2>
 
       <div style="overflow-x: auto; margin-top: 32px;">
@@ -114,24 +151,58 @@ const comparisons = [
           <thead>
             <tr style="border-bottom: 1px solid var(--border-light); text-align: left;">
               <th style="padding: 20px; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--text-subtle);">Aspect</th>
-              <th style="padding: 20px; font-family: var(--font-serif); font-size: 18px; color: var(--accent);">HOOX</th>
-              <th style="padding: 20px; font-size: 14px; color: var(--text-muted);">Large Consultancy</th>
-              <th style="padding: 20px; font-size: 14px; color: var(--text-muted);">Marketing Agency</th>
+              <th style="padding: 20px; font-family: var(--font-serif); font-size: 20px; color: var(--accent);">Margin</th>
+              <th style="padding: 20px; font-size: 14px; color: var(--text-muted);">Large consultancy</th>
+              <th style="padding: 20px; font-size: 14px; color: var(--text-muted);">Marketing agency</th>
+              <th style="padding: 20px; font-size: 14px; color: var(--text-muted);">Freelance advisor</th>
             </tr>
           </thead>
           <tbody>
             {comparisons.map((c) => (
               <tr style="border-bottom: 1px solid rgba(14, 16, 21, 0.06);">
                 <td style="padding: 20px; font-weight: 600; font-size: 14px;">{c.criterion}</td>
-                <td style="padding: 20px; font-weight: 500; font-size: 14px; color: var(--text-main); background-color: var(--accent-soft);">{c.hoox}</td>
+                <td style="padding: 20px; font-weight: 600; font-size: 14px; color: var(--text-main); background-color: var(--accent-soft);">{c.margin}</td>
                 <td style="padding: 20px; font-size: 14px; color: var(--text-muted);">{c.consultancy}</td>
                 <td style="padding: 20px; font-size: 14px; color: var(--text-muted);">{c.agency}</td>
+                <td style="padding: 20px; font-size: 14px; color: var(--text-muted);">{c.freelance}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
     </div>
+
+    <!-- Who We Turn Away -->
+    <div style="margin: 90px 0;">
+      <div class="decision-card-container">
+        <div>
+          <div class="section-label">WHO WE TURN AWAY</div>
+          <h2 class="decision-title" style="margin-top: 12px; margin-bottom: 12px;">Who we turn away.</h2>
+          <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 32px;">
+            Better to say so on the first call than three weeks in.
+          </p>
+
+          <div class="decision-list">
+            {turnAwayItems.map((item) => (
+              <div class="decision-row">
+                <span class="strike-text is-struck">
+                  {item}
+                  <span class="strike-line"></span>
+                </span>
+                <span style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); background: var(--accent-soft); padding: 4px 8px; border-radius: 6px;">
+                  Not a fit
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div class="decision-footer-stats" style="margin-top: 24px;">
+            4 NO · SINCE 2014
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <CallToAction />
 </Layout>

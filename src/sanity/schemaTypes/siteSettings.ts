@@ -7,7 +7,7 @@ export default {
       name: 'brandName',
       title: 'Brand Name',
       type: 'string',
-      initialValue: 'HOOX'
+      initialValue: 'Margin'
     },
     {
       name: 'tagline',
@@ -37,13 +37,13 @@ export default {
       name: 'contactEmail',
       title: 'Contact Email',
       type: 'string',
-      initialValue: 'hello@hoox.example'
+      initialValue: 'hello@margin.example'
     },
     {
       name: 'contactPhone',
       title: 'Contact Phone',
       type: 'string',
-      initialValue: '+44 20 7946 0920'
+      initialValue: '+44 20 0000 0000'
     },
     {
       name: 'locations',

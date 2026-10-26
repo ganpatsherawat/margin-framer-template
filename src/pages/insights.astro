@@ -6,56 +6,65 @@ const essays = [
   {
     date: 'AUG 21, 2026',
     title: 'Your ideal customer profile is a decision, not a description',
-    tag: 'Positioning',
-    readTime: '4 min'
+    tag: 'POSITIONING',
+    readTime: '4 MIN'
   },
   {
     date: 'JUL 16, 2026',
     title: 'Why pipeline reviews turn into blame sessions, and how to stop them',
-    tag: 'Revenue Operations',
-    readTime: '5 min'
+    tag: 'REVENUE OPERATIONS',
+    readTime: '5 MIN'
   },
   {
     date: 'JUN 11, 2026',
     title: 'Raising prices without losing the clients you actually want',
-    tag: 'Pricing',
-    readTime: '4 min'
+    tag: 'PRICING',
+    readTime: '4 MIN'
   }
 ];
 ---
 
-<Layout title="Insights · HOOX Advisory">
+<Layout title="Insights — Margin">
   <div class="site-container" style="padding-top: 140px; padding-bottom: 60px;">
     <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 16px;">
-      Home / Insights
+      HOME / INSIGHTS
     </div>
     <h1 class="hero-headline" style="max-width: 800px;">
       Notes on the unglamorous work of growing.
     </h1>
     <p class="hero-subhead" style="max-width: 600px;">
-      One short essay a month, written directly by the partners.
+      One short essay a month, by the partners.
     </p>
 
     <!-- Featured Lead Essay -->
-    <div style="background-color: var(--bg-card); border-radius: 24px; padding: 48px; border: 1px solid var(--border-card); margin: 56px 0;">
-      <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px;">
-        Strategy · Sep 18, 2026 · 5 Min Read
+    <div style="background-color: var(--bg-card); border-radius: 24px; padding: 48px; border: 1px solid var(--border-card); margin: 56px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center;">
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; margin-bottom: 16px;">
+          STRATEGY · SEP 18, 2026 · 5 MIN
+        </div>
+        <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 3.6vw, 40px); line-height: 1.2; margin-bottom: 20px;">
+          The not-now list: the most useful strategy document you aren’t writing
+        </h2>
+        <p style="font-size: 16px; line-height: 1.6; color: var(--text-muted); margin-bottom: 32px;">
+          Every strategy session produces a list of things to do. The good ones also produce a list of things you have agreed not to do yet, and a rule for who is allowed to reopen it.
+        </p>
+        <div style="display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--border-light); padding-top: 24px;">
+          <img src="/images/15nXOjoMX5B7Svfm82vR0m2A.jpg" alt="Nora Ashby" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" />
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 600; text-transform: uppercase;">Nora Ashby</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); text-transform: uppercase;">Founding Partner</div>
+          </div>
+        </div>
       </div>
-      <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 3.6vw, 44px); line-height: 1.15; margin-bottom: 20px;">
-        The not-now list: the most useful strategy document you aren’t writing
-      </h2>
-      <p style="font-size: 17px; line-height: 1.6; color: var(--text-muted); max-width: 780px; margin-bottom: 32px;">
-        Every executive session produces a list of things to do. The high-conviction sessions also produce a binding list of items you have agreed not to do yet, with explicit criteria for who is permitted to reopen them.
-      </p>
-      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 24px;">
-        <span style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle);">Nora Ashby · Founding Partner</span>
-        <span style="font-weight: 600; color: var(--accent); font-size: 14px;">Read essay →</span>
+
+      <div style="height: 360px; border-radius: 16px; overflow: hidden;">
+        <img src="/images/ow18i5V533EAVlLQT2tw63FAcU.jpg" alt="A fountain pen resting on an open notebook." style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
     </div>
 
     <!-- Earlier Essays Grid -->
     <div style="margin-top: 80px;">
-      <div class="section-label">Archive</div>
+      <div class="section-label">EARLIER ESSAYS</div>
       <h2 class="section-heading">Earlier essays</h2>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 36px;">
@@ -79,7 +88,7 @@ const essays = [
     <!-- Monthly Newsletter Subscription Block -->
     <div style="background-color: var(--bg-card); border-radius: 24px; padding: 48px; border: 1px solid var(--border-card); margin-top: 80px; text-align: center;">
       <h2 style="font-family: var(--font-serif); font-size: 32px; margin-bottom: 12px;">One essay a month. No tricks.</h2>
-      <p style="font-size: 16px; color: var(--text-muted); margin-bottom: 28px;">Delivered directly on the first Tuesday of each month.</p>
+      <p style="font-size: 16px; color: var(--text-muted); margin-bottom: 28px;">On the first Tuesday of the month.</p>
       
       <form onsubmit="event.preventDefault(); alert('Thank you for subscribing.');" style="display: flex; max-width: 440px; margin: 0 auto; gap: 10px;">
         <input 

@@ -13,10 +13,10 @@ export function getStaticPaths() {
 const { caseStudy } = Astro.props;
 ---
 
-<Layout title={`${caseStudy.title} · Case Study · HOOX`}>
+<Layout title={`${caseStudy.title}: ${caseStudy.headline} — Margin`}>
   <div class="site-container" style="padding-top: 140px; padding-bottom: 60px;">
     <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 16px;">
-      <a href="/work" style="text-decoration: underline;">Work</a> / {caseStudy.title}
+      HOME / WORK / {caseStudy.title.toUpperCase()}
     </div>
 
     <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 12px;">

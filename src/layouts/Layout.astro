@@ -9,7 +9,7 @@ interface Props {
 }
 
 const {
-  title = 'HOOX · Strategy & growth advisory',
+  title = 'Margin · Strategy & growth advisory',
   description = 'A two-partner strategy and growth advisory for B2B companies between $5M and $50M in revenue. We find the few decisions that matter, make them with you, and stay until they are working.'
 } = Astro.props;
 ---
@@ -32,7 +32,7 @@ const {
     <!-- Script for immediate palette hydration from localStorage to prevent flash -->
     <script is:inline>
       try {
-        const savedPalette = localStorage.getItem('hoox-palette') || 'cobalt';
+        const savedPalette = localStorage.getItem('margin-palette') || 'cobalt';
         document.documentElement.setAttribute('data-palette', savedPalette);
       } catch (e) {}
     </script>
@@ -92,7 +92,7 @@ const {
 
           document.documentElement.setAttribute('data-palette', palette);
           try {
-            localStorage.setItem('hoox-palette', palette);
+            localStorage.setItem('margin-palette', palette);
           } catch (err) {}
 
           // Update active rings

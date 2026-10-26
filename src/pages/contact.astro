@@ -3,26 +3,26 @@ import Layout from '../layouts/Layout.astro';
 import { siteData } from '../data/siteData';
 ---
 
-<Layout title="Contact · HOOX Advisory">
+<Layout title="Contact — Margin">
   <div class="site-container" style="padding-top: 140px; padding-bottom: 80px;">
     <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 16px;">
-      Home / Contact
+      HOME / CONTACT
     </div>
     <h1 class="hero-headline" style="max-width: 800px;">
       Three lines is enough.
     </h1>
     <p class="hero-subhead" style="max-width: 600px;">
-      A partner reads every message personally and replies within one business day.
+      A partner reads every message and replies within a day.
     </p>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; margin-top: 56px;">
       <!-- Contact Form -->
       <div style="background-color: var(--bg-card); border-radius: 24px; padding: 40px; border: 1px solid var(--border-card);">
         <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; margin-bottom: 24px;">
-          Booking from January 2027
+          BOOKING FROM JANUARY 2027
         </div>
 
-        <form onsubmit="event.preventDefault(); alert('Message sent. A partner will reply within one business day.');" style="display: flex; flex-direction: column; gap: 20px;">
+        <form onsubmit="event.preventDefault(); alert('Message sent. A partner will reply within a day.');" style="display: flex; flex-direction: column; gap: 20px;">
           <div>
             <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Name *</label>
             <input type="text" required placeholder="Alex Vance" style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-light); font-size: 15px; outline: none; background: var(--bg-primary);" />
@@ -34,13 +34,13 @@ import { siteData } from '../data/siteData';
           </div>
 
           <div>
-            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Company</label>
-            <input type="text" placeholder="Acme Logistics" style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-light); font-size: 15px; outline: none; background: var(--bg-primary);" />
+            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Company & stage</label>
+            <input type="text" placeholder="e.g. Series A B2B SaaS" style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-light); font-size: 15px; outline: none; background: var(--bg-primary);" />
           </div>
 
           <div>
-            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">What’s going on? *</label>
-            <textarea required rows="4" maxlength="600" placeholder="Tell us what is stuck or what decision you are facing." style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-light); font-size: 15px; outline: none; background: var(--bg-primary); resize: vertical;"></textarea>
+            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">What feels stuck? *</label>
+            <textarea required rows="4" maxlength="600" placeholder="Three lines is enough. Tell us what is stuck or what decision you are facing." style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-light); font-size: 15px; outline: none; background: var(--bg-primary); resize: vertical;"></textarea>
           </div>
 
           <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--text-muted); cursor: pointer;">
@@ -49,38 +49,38 @@ import { siteData } from '../data/siteData';
           </label>
 
           <button type="submit" class="primary-btn" style="width: 100%; margin-top: 8px;">
-            Send message
+            Book an intro call
           </button>
         </form>
       </div>
 
-      <!-- Direct Booking & FAQ -->
+      <!-- Direct Booking & Contact Details -->
       <div>
         <div style="background-color: var(--bg-card); border-radius: 24px; padding: 40px; border: 1px solid var(--border-card); margin-bottom: 36px;">
           <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 12px;">
-            Rather pick a time?
+            RATHER PICK A TIME?
           </div>
           <h2 style="font-family: var(--font-serif); font-size: 26px; margin-bottom: 12px;">Book 30 minutes directly.</h2>
           <p style="font-size: 15px; line-height: 1.6; color: var(--text-muted); margin-bottom: 24px;">
-            Select a slot in a partner's calendar. The calendar invite and video link arrive instantly.
+            Thirty minutes with a partner. Free, and useful either way.
           </p>
-          <a href="https://cal.com" target="_blank" rel="noopener noreferrer" class="nav-cta" style="display: inline-block; padding: 12px 24px;">
-            Pick a time in our calendar →
+          <a href="/contact" class="nav-cta" style="display: inline-block; padding: 12px 24px;">
+            Pick a time in our diary →
           </a>
         </div>
 
         <div style="padding: 10px 16px;">
           <div style="margin-bottom: 20px;">
-            <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">Direct Email</div>
-            <a href={`mailto:${siteData.contactEmail}`} style="font-size: 16px; font-weight: 500;">{siteData.contactEmail}</a>
+            <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">CONTACT</div>
+            <a href={`mailto:${siteData.contactEmail}`} style="font-size: 16px; font-weight: 500; display: block; margin-top: 4px;">{siteData.contactEmail}</a>
           </div>
           <div style="margin-bottom: 20px;">
-            <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">Direct Telephone</div>
-            <a href={`tel:${siteData.contactPhone}`} style="font-size: 16px; font-weight: 500;">{siteData.contactPhone}</a>
+            <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">TELEPHONE</div>
+            <a href={`tel:${siteData.contactPhone}`} style="font-size: 16px; font-weight: 500; display: block; margin-top: 4px;">{siteData.contactPhone}</a>
           </div>
           <div>
-            <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">Offices</div>
-            <div style="font-size: 15px; color: var(--text-muted);">{siteData.locations}</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">LOCATION</div>
+            <div style="font-size: 15px; color: var(--text-muted); margin-top: 4px;">{siteData.locations}</div>
           </div>
         </div>
       </div>
