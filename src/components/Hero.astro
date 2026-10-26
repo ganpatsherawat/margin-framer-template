@@ -1,5 +1,6 @@
 ---
 import { siteData } from '../data/siteData';
+import ResponsiveImage from './ResponsiveImage.astro';
 
 const { decisionRecord } = siteData;
 const clients = [...siteData.clientMarquee, ...siteData.clientMarquee, ...siteData.clientMarquee, ...siteData.clientMarquee];
@@ -30,10 +31,14 @@ const clients = [...siteData.clientMarquee, ...siteData.clientMarquee, ...siteDa
     <!-- Hero Showcase Container -->
     <div class="hero-showcase">
       <div class="hero-showcase-photo">
-        <img 
+        <ResponsiveImage 
           src={siteData.hero.heroImage} 
           alt={siteData.hero.heroImageAlt}
-          loading="eager"
+          width={956}
+          height={515}
+          widths={[390, 768, 956, 1912]}
+          sizes="(max-width: 809px) 327px, 956px"
+          priority={true}
         />
         <div class="hero-showcase-shade"></div>
       </div>

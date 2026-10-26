@@ -1,12 +1,20 @@
 ---
 import { siteData } from '../data/siteData';
+import ResponsiveImage from './ResponsiveImage.astro';
 
 const { testimonial } = siteData;
 ---
 
 <section class="testimonial-hero-section">
   <div class="testimonial-bg-photo">
-    <img src={testimonial.image} alt={testimonial.company} loading="lazy" />
+    <ResponsiveImage 
+      src={testimonial.image} 
+      alt={testimonial.company} 
+      width={1440} 
+      height={540} 
+      widths={[390, 768, 1440, 2880]} 
+      sizes="100vw" 
+    />
     <div class="testimonial-photo-shade"></div>
   </div>
 

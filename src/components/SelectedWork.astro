@@ -1,5 +1,6 @@
 ---
 import { siteData } from '../data/siteData';
+import ResponsiveImage from './ResponsiveImage.astro';
 ---
 
 <section class="selected-work-section" id="work">
@@ -19,7 +20,14 @@ import { siteData } from '../data/siteData';
             <h3 class="work-row-title">{study.title}</h3>
             <span class="work-row-industry">{study.industry}</span>
             <div class="work-row-thumb">
-              <img src={study.coverImage} alt={study.title} loading="lazy" />
+              <ResponsiveImage 
+                src={study.coverImage} 
+                alt={study.title} 
+                width={78} 
+                height={52} 
+                widths={[78, 156]} 
+                sizes="78px" 
+              />
             </div>
           </div>
 

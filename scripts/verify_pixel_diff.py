@@ -44,11 +44,11 @@ def verify(target_url, mode="both"):
             print("-" * 88)
 
             page_ref = browser.new_page(viewport={"width": 1440, "height": 900})
-            page_ref.goto(ref_url, wait_until="networkidle")
+            page_ref.goto(ref_url, wait_until="load", timeout=60000)
             page_ref.wait_for_timeout(2000)
 
             page_tar = browser.new_page(viewport={"width": 1440, "height": 900})
-            page_tar.goto(target_url, wait_until="networkidle")
+            page_tar.goto(target_url, wait_until="load", timeout=60000)
             page_tar.wait_for_timeout(2000)
 
             for name, ref_expr, tar_expr in SECTIONS_DESKTOP:
@@ -68,11 +68,11 @@ def verify(target_url, mode="both"):
             print("-" * 88)
 
             page_ref = browser.new_page(viewport={"width": 390, "height": 844}, is_mobile=True)
-            page_ref.goto(ref_url, wait_until="networkidle")
+            page_ref.goto(ref_url, wait_until="load", timeout=60000)
             page_ref.wait_for_timeout(2000)
 
             page_tar = browser.new_page(viewport={"width": 390, "height": 844}, is_mobile=True)
-            page_tar.goto(target_url, wait_until="networkidle")
+            page_tar.goto(target_url, wait_until="load", timeout=60000)
             page_tar.wait_for_timeout(2000)
 
             for name, ref_expr, tar_expr in SECTIONS_MOBILE:

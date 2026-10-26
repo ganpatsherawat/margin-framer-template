@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CallToAction from '../components/CallToAction.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
 
 const comparisons = [
   {
@@ -77,11 +78,14 @@ const turnAwayItems = [
       </div>
 
       <div style="height: 360px; border-radius: 20px; overflow: hidden;">
-        <img 
+        <ResponsiveImage 
           src="/images/nLPI85a5ydHrnKzUoyGw7ilZyoM.jpg" 
           alt="Looking up at the concrete facade of a modernist office tower." 
+          width={460}
+          height={360}
+          widths={[360, 460, 720, 920]}
+          sizes="(max-width: 768px) 100vw, 460px"
           style="width: 100%; height: 100%; object-fit: cover;"
-          loading="lazy"
         />
       </div>
     </div>
@@ -97,9 +101,13 @@ const turnAwayItems = [
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
         <div style="background-color: var(--bg-card); border-radius: 20px; padding: 36px; border: 1px solid var(--border-card);">
           <div style="height: 240px; border-radius: 12px; overflow: hidden; margin-bottom: 24px;">
-            <img 
+            <ResponsiveImage 
               src="/images/1ehqDga1C4McfFJ3Yw2BVgtRRi8.jpg" 
               alt="Seen from behind, a woman with curly hair looks out of an office window at the city." 
+              width={380}
+              height={240}
+              widths={[320, 380, 640, 760]}
+              sizes="(max-width: 768px) 100vw, 380px"
               style="width: 100%; height: 100%; object-fit: cover;" 
             />
           </div>
@@ -119,9 +127,13 @@ const turnAwayItems = [
 
         <div style="background-color: var(--bg-card); border-radius: 20px; padding: 36px; border: 1px solid var(--border-card);">
           <div style="height: 240px; border-radius: 12px; overflow: hidden; margin-bottom: 24px;">
-            <img 
+            <ResponsiveImage 
               src="/images/pskkBSXH7v9YHef7RNszJZuGSuI.jpg" 
               alt="Seen from behind through a gridded glass wall, a person looks out over the city." 
+              width={380}
+              height={240}
+              widths={[320, 380, 640, 760]}
+              sizes="(max-width: 768px) 100vw, 380px"
               style="width: 100%; height: 100%; object-fit: cover;" 
             />
           </div>

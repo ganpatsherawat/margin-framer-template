@@ -1,5 +1,6 @@
 ---
 import { siteData } from '../data/siteData';
+import ResponsiveImage from './ResponsiveImage.astro';
 ---
 
 <section class="services-section" id="services">
@@ -12,7 +13,14 @@ import { siteData } from '../data/siteData';
           <div class="service-row-left">
             <span class="service-num">{service.numberCode}</span>
             <div class="service-hover-thumb">
-              <img src={service.thumbnailImage} alt={service.title} loading="lazy" />
+              <ResponsiveImage 
+                src={service.thumbnailImage} 
+                alt={service.title} 
+                width={78} 
+                height={52} 
+                widths={[78, 156]} 
+                sizes="78px" 
+              />
             </div>
             <h3 class="service-title">{service.title}</h3>
           </div>

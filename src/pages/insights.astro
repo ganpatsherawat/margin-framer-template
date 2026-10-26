@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CallToAction from '../components/CallToAction.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
 
 const essays = [
   {
@@ -49,7 +50,15 @@ const essays = [
           Every strategy session produces a list of things to do. The good ones also produce a list of things you have agreed not to do yet, and a rule for who is allowed to reopen it.
         </p>
         <div style="display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--border-light); padding-top: 24px;">
-          <img src="/images/15nXOjoMX5B7Svfm82vR0m2A.jpg" alt="Nora Ashby" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" />
+          <ResponsiveImage 
+            src="/images/15nXOjoMX5B7Svfm82vR0m2A.jpg" 
+            alt="Nora Ashby" 
+            width={40} 
+            height={40} 
+            widths={[40, 80]} 
+            sizes="40px" 
+            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" 
+          />
           <div>
             <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 600; text-transform: uppercase;">Nora Ashby</div>
             <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-subtle); text-transform: uppercase;">Founding Partner</div>
@@ -58,7 +67,15 @@ const essays = [
       </div>
 
       <div style="height: 360px; border-radius: 16px; overflow: hidden;">
-        <img src="/images/ow18i5V533EAVlLQT2tw63FAcU.jpg" alt="A fountain pen resting on an open notebook." style="width: 100%; height: 100%; object-fit: cover;" />
+        <ResponsiveImage 
+          src="/images/ow18i5V533EAVlLQT2tw63FAcU.jpg" 
+          alt="A fountain pen resting on an open notebook." 
+          width={560}
+          height={360}
+          widths={[360, 560, 720, 1120]}
+          sizes="(max-width: 768px) 100vw, 560px"
+          style="width: 100%; height: 100%; object-fit: cover;" 
+        />
       </div>
     </div>
 

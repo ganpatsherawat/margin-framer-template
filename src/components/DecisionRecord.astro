@@ -1,5 +1,6 @@
 ---
 import { siteData } from '../data/siteData';
+import ResponsiveImage from './ResponsiveImage.astro';
 
 const { decisionRecord } = siteData;
 ---
@@ -8,10 +9,14 @@ const { decisionRecord } = siteData;
   <div class="site-container">
     <div class="decision-card-container">
       <div class="media-reveal-wrapper" style="height: 340px;">
-        <img 
+        <ResponsiveImage 
           src={decisionRecord.cardImage} 
           alt={decisionRecord.cardImageAlt}
-          loading="lazy"
+          width={560}
+          height={340}
+          widths={[390, 560, 780, 1120]}
+          sizes="(max-width: 809px) 100vw, 560px"
+          style="width: 100%; height: 100%; object-fit: cover;"
         />
       </div>
 

@@ -1,0 +1,44 @@
+---
+import { getOptimizedImageUrl, buildSrcSet } from '../utils/fastlyImage';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  sizes?: string;
+  widths?: number[];
+  priority?: boolean;
+  class?: string;
+  style?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  sizes = '(max-width: 809px) 100vw, 1344px',
+  widths = [390, 768, 956, 1440],
+  priority = false,
+  class: className = '',
+  style = ''
+} = Astro.props;
+
+const fallbackSrc = getOptimizedImageUrl(src, { width, height });
+const srcSet = widths && widths.length > 0 ? buildSrcSet(src, widths) : undefined;
+---
+
+<img
+  src={fallbackSrc}
+  srcset={srcSet}
+  sizes={srcSet ? sizes : undefined}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={priority ? 'eager' : 'lazy'}
+  decoding={priority ? 'sync' : 'async'}
+  fetchpriority={priority ? 'high' : 'auto'}
+  class={className || undefined}
+  style={style || undefined}
+/>
