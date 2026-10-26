@@ -4,28 +4,24 @@ import { siteData } from '../data/siteData';
 const { testimonial } = siteData;
 ---
 
-<section class="testimonial-section">
-  <div class="site-container">
-    <div class="testimonial-card">
-      <div class="testimonial-image-col">
-        <img src={testimonial.image} alt={testimonial.company} loading="lazy" />
+<section class="testimonial-hero-section">
+  <div class="testimonial-bg-photo">
+    <img src={testimonial.image} alt={testimonial.company} loading="lazy" />
+    <div class="testimonial-photo-shade"></div>
+  </div>
+
+  <div class="site-container testimonial-content-container">
+    <blockquote class="testimonial-quote-huge">
+      {testimonial.quote}
+    </blockquote>
+
+    <div class="testimonial-author-row">
+      <div class="author-avatar-badge" aria-hidden="true">
+        {testimonial.initials}
       </div>
-
       <div>
-        <blockquote class="testimonial-quote">
-          {testimonial.quote}
-        </blockquote>
-
-        <div class="testimonial-author-meta">
-          <div class="author-avatar-badge" aria-hidden="true">
-            {testimonial.initials}
-          </div>
-
-          <div>
-            <div class="author-name">{testimonial.author}</div>
-            <div class="author-role">{testimonial.role}, {testimonial.company}</div>
-          </div>
-        </div>
+        <div class="author-name">{testimonial.author}</div>
+        <div class="author-role">{testimonial.role}, {testimonial.company}</div>
       </div>
     </div>
   </div>

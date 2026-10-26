@@ -1,38 +1,81 @@
 ---
 import { siteData } from '../data/siteData';
+
+const { decisionRecord } = siteData;
+const clients = [...siteData.clientMarquee, ...siteData.clientMarquee, ...siteData.clientMarquee, ...siteData.clientMarquee];
 ---
 
 <section class="hero-section">
-  <div class="site-container">
-    <div class="hero-grid">
-      <div class="hero-text-block">
-        <h1 class="hero-headline">
-          {siteData.hero.headline}
-        </h1>
-        <p class="hero-subhead">
-          {siteData.hero.subhead}
-        </p>
+  <div class="site-container hero-container">
+    <div class="hero-center-block">
+      <h1 class="hero-headline">
+        We help growing companies decide<br />what to stop doing.
+      </h1>
+      <p class="hero-subhead">
+        {siteData.hero.subhead}
+      </p>
 
-        <div class="hero-cta-group">
-          <a href="/contact" class="primary-btn">
-            <span>{siteData.hero.ctaText}</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <span class="cta-subtext">{siteData.consultationNote}</span>
-        </div>
+      <div class="hero-cta-group">
+        <a href="/contact" class="primary-btn">
+          <span>{siteData.hero.ctaText}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <span class="cta-subtext">{siteData.consultationNote}</span>
+      </div>
+    </div>
+
+    <!-- Hero Showcase Container -->
+    <div class="hero-showcase">
+      <div class="hero-showcase-photo">
+        <img 
+          src={siteData.hero.heroImage} 
+          alt={siteData.hero.heroImageAlt}
+          loading="eager"
+        />
+        <div class="hero-showcase-shade"></div>
       </div>
 
-      <div class="hero-image-block">
-        <div class="media-reveal-wrapper" style="height: 380px;">
-          <img 
-            src={siteData.hero.heroImage} 
-            alt={siteData.hero.heroImageAlt}
-            loading="eager"
-          />
+      <!-- Floating Decision Record Card -->
+      <div class="hero-decision-card decision-card-container">
+        <div class="decision-meta-header">{decisionRecord.header}</div>
+        <h2 class="decision-title">{decisionRecord.title}</h2>
+
+        <div class="decision-list">
+          {decisionRecord.items.map((item) => (
+            <div class="decision-row">
+              <span class={`strike-text ${item.status === 'not_now' ? 'is-struck' : ''}`}>
+                {item.text}
+                <span class="strike-line"></span>
+              </span>
+
+              {item.status === 'funded' ? (
+                <span class="status-badge badge-fund">{item.tag || 'FUND'}</span>
+              ) : (
+                <span style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle);">
+                  Stop
+                </span>
+              )}
+            </div>
+          ))}
         </div>
+
+        <div class="decision-footer-stats">
+          {decisionRecord.stats}
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Clients Marquee -->
+    <div class="hero-clients-marquee" aria-label="Selected client portfolio marquee">
+      <div class="ticker-track">
+        {clients.map((client) => (
+          <div class="ticker-item">
+            {client}
+          </div>
+        ))}
       </div>
     </div>
   </div>

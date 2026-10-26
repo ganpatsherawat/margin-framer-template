@@ -4,30 +4,26 @@ import { siteData } from '../data/siteData';
 const { featuredCase } = siteData;
 ---
 
-<section style="padding: 20px 0 60px;">
+<section class="featured-case-section">
   <div class="site-container">
-    <div class="featured-callout">
-      <div class="site-container">
-        <div class="featured-grid">
-          <div>
-            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 12px;">
-              {featuredCase.client} · {featuredCase.industry} · {featuredCase.year}
-            </div>
-            <div class="featured-metric-huge">
-              {featuredCase.metricValue}
-            </div>
-          </div>
-
-          <div>
-            <p class="featured-quote-text">
-              {featuredCase.metricLabel}
-            </p>
-            <a href={`/work/${featuredCase.slug}`} class="nav-cta" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px;">
-              <span>{featuredCase.readText}</span>
-              <span>→</span>
-            </a>
-          </div>
-        </div>
+    <div class="featured-case-wrapper">
+      <div class="featured-tag">
+        {featuredCase.client} · {featuredCase.industry} · {featuredCase.year}
+      </div>
+      <div class="featured-metric-huge">
+        {featuredCase.metricValue}
+      </div>
+      <div class="featured-foot">
+        <p class="featured-quote-text">
+          {featuredCase.metricLabel}
+        </p>
+        <a href={`/work/${featuredCase.slug}`} class="featured-btn">
+          <span>{featuredCase.readText}</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
