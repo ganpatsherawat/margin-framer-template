@@ -13,3 +13,13 @@ node_modules/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Inspection output & test screenshots
+*.png
+all_framer_computed_styles.json
+all_targets.json
+breakdowns.json
+framer_main_sections.json
+framer_sections.json
+inners_detail.json
+mobile_inners.json
