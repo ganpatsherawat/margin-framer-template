@@ -1,0 +1,39 @@
+---
+import { siteData } from '../data/siteData';
+---
+
+<section class="services-section" id="services">
+  <div class="site-container">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-heading">What we’re hired for</h2>
+
+    <div class="services-list">
+      {siteData.services.map((service) => (
+        <a href={`/services/${service.slug}`} class="service-row" data-service-slug={service.slug}>
+          <div class="service-row-left">
+            <span class="service-num">{service.numberCode}</span>
+            <div class="service-hover-thumb">
+              <img src={service.thumbnailImage} alt={service.title} loading="lazy" />
+            </div>
+            <h3 class="service-title">{service.title}</h3>
+          </div>
+
+          <div class="service-row-right">
+            <div class="service-pricing-meta">
+              <span>{service.duration}</span>
+              <span>·</span>
+              <span>{service.priceFrom}</span>
+            </div>
+
+            <div class="service-arrow-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

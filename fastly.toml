@@ -1,0 +1,10 @@
+manifest_version = 3
+name = "hoox-advisory"
+description = "HOOX Strategy & Growth Advisory static edge delivery on Fastly"
+language = "other"
+
+[scripts]
+  build = "npm run build"
+
+[local_server]
+  [local_server.backends]

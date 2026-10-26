@@ -1,0 +1,61 @@
+---
+import { siteData } from '../data/siteData';
+
+const navLinks = [
+  { label: 'Services', href: '/services' },
+  { label: 'Work', href: '/work' },
+  { label: 'About', href: '/about' },
+  { label: 'Insights', href: '/insights' },
+];
+---
+
+<header class="floating-header-wrapper" role="banner">
+  <nav class="floating-header" aria-label="Main Navigation">
+    <a href="/" class="nav-logo" aria-label={`${siteData.brandName} Home`}>
+      <span>{siteData.brandName}</span>
+      <span class="logo-dot">.</span>
+    </a>
+
+    <div class="nav-links">
+      {navLinks.map((link) => (
+        <a href={link.href} class="nav-item">
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <a href="/contact" class="nav-cta">
+      Book a call
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button type="button" class="mobile-nav-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+      Menu
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile Menu Drawer -->
+<div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+  <div class="mobile-menu-content">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+      <span style="font-weight: 700; font-size: 18px;">
+        {siteData.brandName}<span style="color: var(--accent);">.</span>
+      </span>
+      <button type="button" id="mobile-menu-close" style="font-size: 24px; padding: 4px;" aria-label="Close menu">
+        ✕
+      </button>
+    </div>
+
+    {navLinks.map((link) => (
+      <a href={link.href} class="mobile-menu-link">
+        <span>{link.label}</span>
+        <span style="font-size: 16px; color: var(--text-subtle);">→</span>
+      </a>
+    ))}
+
+    <a href="/contact" class="primary-btn" style="margin-top: 16px; width: 100%; text-align: center;">
+      Book an intro call
+    </a>
+  </div>
+</div>

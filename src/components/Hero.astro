@@ -1,0 +1,39 @@
+---
+import { siteData } from '../data/siteData';
+---
+
+<section class="hero-section">
+  <div class="site-container">
+    <div class="hero-grid">
+      <div class="hero-text-block">
+        <h1 class="hero-headline">
+          {siteData.hero.headline}
+        </h1>
+        <p class="hero-subhead">
+          {siteData.hero.subhead}
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="/contact" class="primary-btn">
+            <span>{siteData.hero.ctaText}</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <span class="cta-subtext">{siteData.consultationNote}</span>
+        </div>
+      </div>
+
+      <div class="hero-image-block">
+        <div class="media-reveal-wrapper" style="height: 380px;">
+          <img 
+            src={siteData.hero.heroImage} 
+            alt={siteData.hero.heroImageAlt}
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+---
+import { siteData } from '../data/siteData';
+
+const { featuredCase } = siteData;
+---
+
+<section style="padding: 20px 0 60px;">
+  <div class="site-container">
+    <div class="featured-callout">
+      <div class="site-container">
+        <div class="featured-grid">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 12px;">
+              {featuredCase.client} · {featuredCase.industry} · {featuredCase.year}
+            </div>
+            <div class="featured-metric-huge">
+              {featuredCase.metricValue}
+            </div>
+          </div>
+
+          <div>
+            <p class="featured-quote-text">
+              {featuredCase.metricLabel}
+            </p>
+            <a href={`/work/${featuredCase.slug}`} class="nav-cta" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px;">
+              <span>{featuredCase.readText}</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

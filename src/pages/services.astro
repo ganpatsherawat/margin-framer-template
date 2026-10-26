@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { siteData } from '../data/siteData';
+
+const comparisons = [
+  {
+    quote: '“Buyers don’t get what we do until the third call.”',
+    usualFix: 'Rebrand.',
+    solution: 'Positioning',
+    slug: 'positioning'
+  },
+  {
+    quote: '“We have more growth ideas than people to run them.”',
+    usualFix: 'Hire faster.',
+    solution: 'Go-to-market',
+    slug: 'go-to-market'
+  },
+  {
+    quote: '“I’m making big calls with nobody to test them against.”',
+    usualFix: 'Add another management layer.',
+    solution: 'Advisory',
+    slug: 'advisory'
+  }
+];
+
+const phases = [
+  { code: '01', title: 'Diagnose', timing: 'Weeks 1–2', desc: 'Interview lost prospects, customers, and founders to uncover the true friction.' },
+  { code: '02', title: 'Decide', timing: 'Weeks 3–4', desc: 'Isolate the 2 or 3 strategic choices that actually move enterprise retention.' },
+  { code: '03', title: 'Build', timing: 'Weeks 5–10', desc: 'Construct commercial playbooks, messaging architecture, and pricing packaging.' },
+  { code: '04', title: 'Hand over', timing: 'Weeks 11–12', desc: 'Train teams, monitor initial live conversations, and ensure autonomous execution.' }
+];
+---
+
+<Layout title="Services · HOOX Advisory">
+  <div class="site-container" style="padding-top: 140px; padding-bottom: 60px;">
+    <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 16px;">
+      Home / Services
+    </div>
+    <h1 class="hero-headline" style="max-width: 800px;">
+      Three ways to work with us.
+    </h1>
+    <p class="hero-subhead" style="max-width: 620px;">
+      Each one is scoped around a high-stakes decision, and priced up front.
+    </p>
+
+    <!-- Pricing Cards Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 56px;">
+      {siteData.services.map((srv) => (
+        <div style="background-color: var(--bg-card); border-radius: 20px; padding: 36px 32px; border: 1px solid var(--border-card); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+              <span style="font-family: var(--font-mono); font-size: 14px; color: var(--text-subtle);">{srv.numberCode}</span>
+              <span style="font-family: var(--font-serif); font-size: 28px; color: var(--accent);">{srv.priceFrom}</span>
+            </div>
+
+            <h2 style="font-family: var(--font-serif); font-size: 28px; margin-bottom: 16px;">{srv.title}</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--text-muted); margin-bottom: 28px;">
+              {srv.summary}
+            </p>
+          </div>
+
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 16px;">
+              Fixed Scope · {srv.duration}
+            </div>
+            <a href={`/services/${srv.slug}`} class="nav-cta" style="display: block; text-align: center; padding: 12px 20px;">
+              See what’s included →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Diagnostic Comparison Matrix -->
+    <div style="margin-top: 100px; padding-top: 60px; border-top: 1px solid var(--border-light);">
+      <div class="section-label">Diagnostic Fit</div>
+      <h2 class="section-heading">Not sure which? Start with what you’d say.</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 36px;">
+        {comparisons.map((c) => (
+          <div style="background-color: var(--bg-card); border-radius: 18px; padding: 28px; border: 1px solid var(--border-card);">
+            <p style="font-family: var(--font-serif); font-size: 20px; line-height: 1.4; margin-bottom: 24px;">
+              {c.quote}
+            </p>
+            <div style="margin-bottom: 16px;">
+              <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">Usual Fix</div>
+              <div style="font-size: 15px; color: var(--text-muted);">{c.usualFix}</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">Start With</div>
+              <a href={`/services/${c.slug}`} style="font-weight: 600; color: var(--accent); font-size: 15px;">{c.solution} →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Process Phases Timeline -->
+    <div style="margin-top: 100px; padding-top: 60px; border-top: 1px solid var(--border-light);">
+      <div class="section-label">Engagement Architecture</div>
+      <h2 class="section-heading">Twelve weeks, four phases.</h2>
+      <p style="font-size: 17px; color: var(--text-muted); margin-bottom: 40px; max-width: 600px;">
+        The weeks flex to fit the problem. The sequence and decision discipline do not.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+        {phases.map((ph) => (
+          <div style="background-color: var(--bg-card); border-radius: 16px; padding: 24px; border: 1px solid var(--border-card);">
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); margin-bottom: 8px;">{ph.code} · {ph.timing}</div>
+            <h3 style="font-family: var(--font-serif); font-size: 22px; margin-bottom: 10px;">{ph.title}</h3>
+            <p style="font-size: 14px; line-height: 1.5; color: var(--text-muted);">{ph.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+  <CallToAction />
+</Layout>

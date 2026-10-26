@@ -1,0 +1,47 @@
+---
+import { siteData } from '../data/siteData';
+
+const { decisionRecord } = siteData;
+---
+
+<section style="padding: 20px 0 60px;">
+  <div class="site-container">
+    <div class="decision-card-container">
+      <div class="media-reveal-wrapper" style="height: 340px;">
+        <img 
+          src={decisionRecord.cardImage} 
+          alt={decisionRecord.cardImageAlt}
+          loading="lazy"
+        />
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <div class="decision-meta-header">{decisionRecord.header}</div>
+        <h2 class="decision-title">{decisionRecord.title}</h2>
+
+        <div class="decision-list">
+          {decisionRecord.items.map((item) => (
+            <div class="decision-row">
+              <span class={`strike-text ${item.status === 'not_now' ? 'is-struck' : ''}`}>
+                {item.text}
+                <span class="strike-line"></span>
+              </span>
+
+              {item.status === 'funded' ? (
+                <span class="status-badge badge-fund">{item.tag || 'Fund'}</span>
+              ) : (
+                <span style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle);">
+                  Stop
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div class="decision-footer-stats">
+          {decisionRecord.stats}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+---
+
+<Layout title="Contact · HOOX Advisory">
+  <div class="site-container" style="padding-top: 140px; padding-bottom: 80px;">
+    <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 16px;">
+      Home / Contact
+    </div>
+    <h1 class="hero-headline" style="max-width: 800px;">
+      Three lines is enough.
+    </h1>
+    <p class="hero-subhead" style="max-width: 600px;">
+      A partner reads every message personally and replies within one business day.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; margin-top: 56px;">
+      <!-- Contact Form -->
+      <div style="background-color: var(--bg-card); border-radius: 24px; padding: 40px; border: 1px solid var(--border-card);">
+        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; margin-bottom: 24px;">
+          Booking from January 2027
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('Message sent. A partner will reply within one business day.');" style="display: flex; flex-direction: column; gap: 20px;">
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Name *</label>
+            <input type="text" required placeholder="Alex Vance" style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-light); font-size: 15px; outline: none; background: var(--bg-primary);" />
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Work email *</label>
+            <input type="email" required placeholder="alex@company.example" style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-light); font-size: 15px; outline: none; background: var(--bg-primary);" />
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">Company</label>
+            <input type="text" placeholder="Acme Logistics" style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-light); font-size: 15px; outline: none; background: var(--bg-primary);" />
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px;">What’s going on? *</label>
+            <textarea required rows="4" maxlength="600" placeholder="Tell us what is stuck or what decision you are facing." style="width: 100%; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border-light); font-size: 15px; outline: none; background: var(--bg-primary); resize: vertical;"></textarea>
+          </div>
+
+          <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--text-muted); cursor: pointer;">
+            <input type="checkbox" required style="margin-top: 3px;" />
+            <span>Store these details so you can reply to me. Nothing else.</span>
+          </label>
+
+          <button type="submit" class="primary-btn" style="width: 100%; margin-top: 8px;">
+            Send message
+          </button>
+        </form>
+      </div>
+
+      <!-- Direct Booking & FAQ -->
+      <div>
+        <div style="background-color: var(--bg-card); border-radius: 24px; padding: 40px; border: 1px solid var(--border-card); margin-bottom: 36px;">
+          <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 12px;">
+            Rather pick a time?
+          </div>
+          <h2 style="font-family: var(--font-serif); font-size: 26px; margin-bottom: 12px;">Book 30 minutes directly.</h2>
+          <p style="font-size: 15px; line-height: 1.6; color: var(--text-muted); margin-bottom: 24px;">
+            Select a slot in a partner's calendar. The calendar invite and video link arrive instantly.
+          </p>
+          <a href="https://cal.com" target="_blank" rel="noopener noreferrer" class="nav-cta" style="display: inline-block; padding: 12px 24px;">
+            Pick a time in our calendar →
+          </a>
+        </div>
+
+        <div style="padding: 10px 16px;">
+          <div style="margin-bottom: 20px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">Direct Email</div>
+            <a href={`mailto:${siteData.contactEmail}`} style="font-size: 16px; font-weight: 500;">{siteData.contactEmail}</a>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">Direct Telephone</div>
+            <a href={`tel:${siteData.contactPhone}`} style="font-size: 16px; font-weight: 500;">{siteData.contactPhone}</a>
+          </div>
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; color: var(--text-subtle);">Offices</div>
+            <div style="font-size: 15px; color: var(--text-muted);">{siteData.locations}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

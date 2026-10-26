@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const styleSections = [
+  {
+    num: '01',
+    title: 'Site settings and the Header / Footer',
+    desc: 'Name, email, phone and navigation live in siteSettings and the Layout template. Edit them in the Sanity CMS schema or siteData file; every page follows immediately.'
+  },
+  {
+    num: '02',
+    title: 'Color Palettes & Design Tokens',
+    desc: 'Cobalt, Mint, Lime, and Violet are fully tokenized. Switching the data-palette attribute updates --accent, --accent-light, --accent-dark, and --accent-tint across all highlights, badges, and buttons.'
+  },
+  {
+    num: '03',
+    title: 'Typography System',
+    desc: 'Fraunces Variable for expressive editorial display headings; Geist for crisp user interface and body copy; Geist Mono for metadata, badges, and numerical statistics; Instrument Serif for italic emphasis.'
+  },
+  {
+    num: '04',
+    title: 'Sanity CMS Schemas',
+    desc: 'Includes production schemas for Services, Case Studies, Testimonials, Decision Records, and Global Site Settings with structured fields and image hotspots.'
+  },
+  {
+    num: '05',
+    title: 'Decision Record & Strike-Through',
+    desc: 'The Not-Now list uses a hardware-accelerated CSS transition drawing an inline strikethrough over 0.55s with cubic-bezier(0.65, 0, 0.35, 1) upon scroll viewport entry.'
+  },
+  {
+    num: '06',
+    title: 'Expanding Service Row Hover',
+    desc: 'Service rows expand a thumbnail image smoothly from width 0 to 78px with cubic-bezier(0.16, 1, 0.3, 1) and rotate the arrow button while highlighting the title.'
+  }
+];
+---
+
+<Layout title="Style Guide · HOOX Advisory">
+  <div class="site-container" style="padding-top: 140px; padding-bottom: 60px;">
+    <div style="font-family: var(--font-mono); font-size: 13px; color: var(--text-subtle); text-transform: uppercase; margin-bottom: 16px;">
+      Home / Style Guide
+    </div>
+    <h1 class="hero-headline" style="max-width: 800px;">
+      Make it yours.
+    </h1>
+    <p class="hero-subhead" style="max-width: 650px;">
+      Everything on the site stems from a handful of tokens, five CMS collections, and reusable Astro components.
+    </p>
+
+    <!-- Architecture Breakdown -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 56px;">
+      {styleSections.map((sec) => (
+        <div style="background-color: var(--bg-card); border-radius: 20px; padding: 36px 32px; border: 1px solid var(--border-card);">
+          <div style="font-family: var(--font-mono); font-size: 13px; color: var(--accent); margin-bottom: 16px;">{sec.num}</div>
+          <h2 style="font-family: var(--font-serif); font-size: 24px; margin-bottom: 14px;">{sec.title}</h2>
+          <p style="font-size: 15px; line-height: 1.6; color: var(--text-muted);">{sec.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Live Palette Swatches Demonstration -->
+    <div style="background-color: var(--bg-card); border-radius: 24px; padding: 48px; border: 1px solid var(--border-card); margin-top: 64px;">
+      <div class="section-label">Live Palette Engine</div>
+      <h2 class="section-heading" style="margin-bottom: 24px;">Four curated editorial palettes</h2>
+      <p style="font-size: 16px; color: var(--text-muted); margin-bottom: 32px;">Click any swatch to test the instant theme adaptation across all site tokens:</p>
+
+      <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="swatch-btn swatch-cobalt" style="width: 32px; height: 32px;" data-swatch="cobalt"></div>
+          <div>
+            <div style="font-weight: 600; font-size: 15px;">Cobalt</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle);">#2442D8 (Default)</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="swatch-btn swatch-mint" style="width: 32px; height: 32px;" data-swatch="mint"></div>
+          <div>
+            <div style="font-weight: 600; font-size: 15px;">Mint</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle);">#6BE8B6</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="swatch-btn swatch-lime" style="width: 32px; height: 32px;" data-swatch="lime"></div>
+          <div>
+            <div style="font-weight: 600; font-size: 15px;">Lime</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle);">#B8EC5C</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div class="swatch-btn swatch-violet" style="width: 32px; height: 32px;" data-swatch="violet"></div>
+          <div>
+            <div style="font-weight: 600; font-size: 15px;">Violet</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-subtle);">#5132D9</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <CallToAction />
+</Layout>

@@ -1,0 +1,141 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'HOOX · Strategy & growth advisory',
+  description = 'A two-partner strategy and growth advisory for B2B companies between $5M and $50M in revenue. We find the few decisions that matter, make them with you, and stay until they are working.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" data-palette="cobalt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Script for immediate palette hydration from localStorage to prevent flash -->
+    <script is:inline>
+      try {
+        const savedPalette = localStorage.getItem('hoox-palette') || 'cobalt';
+        document.documentElement.setAttribute('data-palette', savedPalette);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <Navbar />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Core Runtime Scripts: Scroll Hide, Strikethrough Intersection, Reveal & Palette -->
+    <script>
+      // 1. Navigation Auto-Hide on Scroll
+      let lastScrollY = window.scrollY;
+      const navWrapper = document.querySelector('.floating-header-wrapper');
+      
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        if (!navWrapper) return;
+        
+        if (currentScrollY > 120 && currentScrollY > lastScrollY) {
+          // Scrolling down
+          navWrapper.classList.add('is-hidden');
+        } else {
+          // Scrolling up or top
+          navWrapper.classList.remove('is-hidden');
+        }
+        lastScrollY = currentScrollY;
+      }, { passive: true });
+
+      // 2. Intersection Observer for Scroll Reveals and Strikethrough
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.15
+      };
+
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in-view');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.media-reveal-wrapper, .decision-card-container').forEach((el) => {
+        scrollObserver.observe(el);
+      });
+
+      // 3. Palette Switcher Persistence & Interaction
+      document.querySelectorAll('.swatch-btn').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const target = e.currentTarget as HTMLElement;
+          const palette = target.getAttribute('data-swatch');
+          if (!palette) return;
+
+          document.documentElement.setAttribute('data-palette', palette);
+          try {
+            localStorage.setItem('hoox-palette', palette);
+          } catch (err) {}
+
+          // Update active rings
+          document.querySelectorAll('.swatch-btn').forEach((s) => {
+            s.classList.remove('is-active');
+            s.setAttribute('aria-pressed', 'false');
+          });
+          target.classList.add('is-active');
+          target.setAttribute('aria-pressed', 'true');
+        });
+      });
+
+      // Synchronize initial active swatch state
+      const currentActivePalette = document.documentElement.getAttribute('data-palette') || 'cobalt';
+      const activeBtn = document.querySelector(`.swatch-btn[data-swatch="${currentActivePalette}"]`);
+      if (activeBtn) {
+        activeBtn.classList.add('is-active');
+        activeBtn.setAttribute('aria-pressed', 'true');
+      }
+
+      // 4. Back To Top
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // 5. Mobile Menu Toggle
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mobileDrawer = document.getElementById('mobile-menu-drawer');
+      const mobileClose = document.getElementById('mobile-menu-close');
+
+      if (mobileToggle && mobileDrawer) {
+        mobileToggle.addEventListener('click', () => {
+          mobileDrawer.classList.toggle('is-open');
+        });
+      }
+      if (mobileClose && mobileDrawer) {
+        mobileClose.addEventListener('click', () => {
+          mobileDrawer.classList.remove('is-open');
+        });
+      }
+    </script>
+  </body>
+</html>

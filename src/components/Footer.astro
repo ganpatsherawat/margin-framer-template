@@ -1,0 +1,114 @@
+---
+import { siteData } from '../data/siteData';
+
+const pageLinks = [
+  { label: 'Services', href: '/services' },
+  { label: 'Work', href: '/work' },
+  { label: 'About', href: '/about' },
+  { label: 'Insights', href: '/insights' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const socialLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
+  { label: 'Substack', href: 'https://substack.com/' },
+];
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="site-container">
+    <div class="footer-top-grid">
+      <div class="footer-brand">
+        <h3>{siteData.brandName}</h3>
+        <p>{siteData.tagline}. {siteData.locations}.</p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Pages</div>
+        <ul class="footer-links-list">
+          {pageLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links-list">
+          <li>
+            <a href={`mailto:${siteData.contactEmail}`}>{siteData.contactEmail}</a>
+          </li>
+          <li>
+            <a href={`tel:${siteData.contactPhone}`}>{siteData.contactPhone}</a>
+          </li>
+          <li style="color: var(--text-inverted-muted); font-size: 14px;">
+            {siteData.locations}
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Elsewhere</div>
+        <ul class="footer-links-list">
+          {socialLinks.map((link) => (
+            <li>
+              <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="footer-meta-left">
+        <span>© 2026 {siteData.brandName} Advisory</span>
+        <span>·</span>
+        <a href="/style-guide" style="color: inherit; text-decoration: underline;">Style guide</a>
+      </div>
+
+      <div class="palette-control-group">
+        <span class="palette-label">Palette</span>
+        <div class="swatch-row" role="group" aria-label="Theme color palette selector">
+          <button 
+            type="button" 
+            class="swatch-btn swatch-cobalt" 
+            data-swatch="cobalt" 
+            aria-label="Cobalt palette"
+            title="Cobalt palette"
+          ></button>
+          <button 
+            type="button" 
+            class="swatch-btn swatch-mint" 
+            data-swatch="mint" 
+            aria-label="Mint palette"
+            title="Mint palette"
+          ></button>
+          <button 
+            type="button" 
+            class="swatch-btn swatch-lime" 
+            data-swatch="lime" 
+            aria-label="Lime palette"
+            title="Lime palette"
+          ></button>
+          <button 
+            type="button" 
+            class="swatch-btn swatch-violet" 
+            data-swatch="violet" 
+            aria-label="Violet palette"
+            title="Violet palette"
+          ></button>
+        </div>
+      </div>
+
+      <button type="button" class="back-to-top-btn" id="back-to-top">
+        Back to top ↑
+      </button>
+    </div>
+
+    <p class="footer-disclaimer-notice">
+      {siteData.footer.disclaimer}
+    </p>
+  </div>
+</footer>

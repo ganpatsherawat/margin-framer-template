@@ -1,0 +1,16 @@
+---
+import { siteData } from '../data/siteData';
+
+// Duplicate clients to ensure infinite loop without jump
+const clients = [...siteData.clientMarquee, ...siteData.clientMarquee, ...siteData.clientMarquee, ...siteData.clientMarquee];
+---
+
+<section class="ticker-section" aria-label="Selected client portfolio marquee">
+  <div class="ticker-track">
+    {clients.map((client) => (
+      <div class="ticker-item">
+        {client}
+      </div>
+    ))}
+  </div>
+</section>

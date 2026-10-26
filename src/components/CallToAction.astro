@@ -1,0 +1,23 @@
+---
+import { siteData } from '../data/siteData';
+
+const { ctaBanner } = siteData;
+---
+
+<section class="pre-footer-cta">
+  <div class="site-container">
+    <div class="cta-inner">
+      <div class="cta-tagline">{ctaBanner.badge}</div>
+      <h2 class="cta-title">{ctaBanner.headline}</h2>
+      <p class="cta-desc">{ctaBanner.subhead}</p>
+
+      <a href="/contact" class="primary-btn" style="padding: 16px 36px; font-size: 16px;">
+        <span>{ctaBanner.ctaButton}</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

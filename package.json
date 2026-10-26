@@ -1,0 +1,19 @@
+{
+  "name": "hoox-advisory",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.2.5",
+    "@sanity/client": "^6.27.2",
+    "@sanity/image-url": "^1.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
